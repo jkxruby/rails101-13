@@ -7,19 +7,22 @@
    <table class="table table-hover">
       <thead>
         <tr>
-          <td> Title </td>
-          <td> Description </td>
-          <td> User </td>
-          <td> Update Time </td>
+          <th> Title </th>
+          <th> Description </th>
+          <th> User </th>
+          <th> Update Time </th>
         </tr>
       </thead>
       <tbody>
          <% @groups.each do |group| %>
          <tr>
-           <td><%= group.title %></td>
+           <td><%= link_to group.title, group_path(group) %></td>
            <td><%= group.description %></td>
-           <td><%= group.user.email %></td>
-           <td><%= group.updated_at %></td>
+           <td> # </td>
+           <td>
+               <%= link_to "Edit", edit_group_path(group), class: "btn btn-info btn-sm" %>|
+               <%= link_to "Delet", group_path(group), class: "btn btn-warning btn-sm", method: :delete, data: {confirm: "are you sure?"}%>
+           </td>
          </tr>
          <% end %>
       </tbody>

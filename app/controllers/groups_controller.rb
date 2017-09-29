@@ -4,6 +4,10 @@ def show
   @group = Group.find(params[:id])
 end
 
+def index
+  @groups = Group.all
+end
+
 def new
   @group = Group.new
 end
@@ -39,7 +43,7 @@ end
 private
 
 def group_params
-  params.require(:title).permit(:description)
-end 
+  params.require(:group).permit(:title, :description)
+end
 
 end
