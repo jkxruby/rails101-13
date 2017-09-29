@@ -1,0 +1,29 @@
+<div class="col-md-12">
+  <h1> 话题列表 </h1>
+ <div class="group">
+   <%= link_to "New Group", new_group_path, class: "btn btn-primary pull-right" %>
+ </div>
+
+   <table class="table table-hover">
+      <thead>
+        <tr>
+          <td> Title </td>
+          <td> Description </td>
+          <td> User </td>
+          <td> Update Time </td>
+        </tr>
+      </thead>
+      <tbody>
+         <% @groups.each do |group| %>
+         <tr>
+           <td><%= group.title %></td>
+           <td><%= group.description %></td>
+           <td><%= group.user.email %></td>
+           <td><%= group.updated_at %></td>
+         </tr>
+         <% end %>
+      </tbody>
+
+   </table>
+
+</div>
