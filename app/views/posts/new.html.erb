@@ -1,0 +1,8 @@
+<div class="col-md-4 col-md-offset-4">
+   <h1> 新建评论 </h1>
+   <hr>
+   <%= simple_form_for [@group, @post] do |f| %>
+   <%= f.input :content, input_html: {class: "form-control" }%>
+   <%= f.submit "Submit", data: {disable_with: "Submiting..."}, input_html: {class: "form-control" }, class: "btn btn-primary "%>
+   <% end %>
+</div>
