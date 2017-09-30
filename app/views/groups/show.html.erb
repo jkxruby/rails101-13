@@ -3,9 +3,11 @@
 
      <span class="pull-right">
      <% if current_user && current_user.is_member_of?(@group) %>
-      <label class="label label-success"> 群组成员 </label>
+      <label class="label label-success pull-right"> 群组成员 </label>
+      <%= link_to "退出群组", quit_group_path(@group), method: :post, class: "btn btn-warning" %>
      <% else %>
-       <label class="label label-default"> 不是群组成员 </label>
+       <label class="label label-default pull-right"> 路过游客 </label>
+       <%= link_to "加入群组", join_group_path(@group), method: :post, class: "btn btn-info" %>
      <% end %>
    </span>
 
@@ -18,6 +20,8 @@
     <br>
     <td><%= @group.description %></td>
   </tr>
+
+    <hr>
 
    <table class="table table-hover">
       <thead>
