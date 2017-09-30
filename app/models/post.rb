@@ -3,5 +3,6 @@ validates :content, presence: true
 
 belongs_to :group
 belongs_to :user
+has_many :group_relationships 
 
 end
