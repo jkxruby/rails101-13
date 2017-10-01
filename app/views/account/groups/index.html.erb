@@ -1,0 +1,25 @@
+<div class="col-md-12">
+   <h1>加入的群组</h1>
+   <hr>
+
+   <table class="table table-hover">
+     <thead>
+       <tr>
+         <th> Title </th>
+         <th> Description </th>
+         <th> Update_Time </th>
+       </tr>
+     </thead>
+
+     <tbody>
+        <% @groups.each do |group| %>
+        <tr>
+          <td><%= group.title %></td>
+          <td><%= group.description %></td>
+          <td><%= group.updated_at%></td>
+        </tr>
+        <% end %>
+     </tbody>
+   </table>
+
+</div>
